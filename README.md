@@ -1,5 +1,5 @@
 # GH-GCN
-Our proposed GH-GCN is effective in both skeleton-based interaction recognition and individual recognition
+Our proposed MS-GCN is effective in both skeleton-based interaction recognition and individual recognition
 # Prerequisites
 
 - Python >= 3.6
@@ -69,7 +69,7 @@ Put downloaded data into the following directory structure:
 
 ```
 # Example: training GH-GCN on NTU RGB+D 120 cross subject with GPU 0
-python main.py --config config/nturgbd120-cross-subject/default.yaml --work-dir work_dir/ntu120/csub/ghgcn --device 0
+python main.py --config config/nturgbd120-cross-subject/default.yaml --work-dir work_dir/ntu120/csub/msgcn --device 0
 
 ```
 
@@ -77,7 +77,7 @@ python main.py --config config/nturgbd120-cross-subject/default.yaml --work-dir 
 
 ```
 # Example: training GH-GCN on NTU RGB+D 120 cross subject under bone modality
-python main.py --config config/nturgbd120-cross-subject/default.yaml --train_feeder_args bone=True --test_feeder_args bone=True --work-dir work_dir/ntu120/csub/ghgcn_bone --device 0
+python main.py --config config/nturgbd120-cross-subject/default.yaml --train_feeder_args bone=True --test_feeder_args bone=True --work-dir work_dir/ntu120/csub/msgcn_bone --device 0
 ```
 
 - To train your own model, put model file `your_model.py` under `./model` and run:
@@ -97,8 +97,8 @@ python main.py --config <work_dir>/config.yaml --work-dir <work_dir> --phase tes
 
 - To ensemble the results of different modalities, run 
 ```
-# Example: ensemble four modalities of GHGCN on NTU RGB+D 120 cross subject
-python ensemble.py --datasets ntu120/xsub --joint-dir work_dir/ntu120/csub/ctrgcn --bone-dir work_dir/ntu120/csub/ghgcn_bone --joint-motion-dir work_dir/ntu120/csub/ctrgcn_motion --bone-motion-dir work_dir/ntu120/csub/ghgcn_bone_motion
+# Example: ensemble four modalities of MSGCN on NTU RGB+D 120 cross subject
+python ensemble.py --datasets ntu120/xsub --joint-dir work_dir/ntu120/csub/msggcn --bone-dir work_dir/ntu120/csub/msgcn_bone --joint-motion-dir work_dir/ntu120/csub/msgcn_motion --bone-motion-dir work_dir/ntu120/csub/msgcn_bone_motion
 ```
 
 ### Pretrained Models
