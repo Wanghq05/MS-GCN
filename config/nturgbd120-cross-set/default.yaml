@@ -1,4 +1,4 @@
-work_dir: ./work_dir/ntu120/xset/ctrgcn_joint
+work_dir: ./work_dir/ntu120/xset/msgcn_joint
 
 # feeder
 feeder: feeders.feeder_ntu.Feeder
@@ -26,7 +26,7 @@ test_feeder_args:
   debug: False
 
 # model
-model: model.hdgcn.Model
+model: model.msgcn.Model
 model_args:
   num_class: 120
   num_point: 25

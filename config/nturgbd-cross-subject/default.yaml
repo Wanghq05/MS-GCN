@@ -1,4 +1,4 @@
-work_dir: ./work_dir/ntu60/xsub/ctrgcn_joint
+work_dir: ./work_dir/ntu60/xsub/msgcn_joint
 
 # feeder
 feeder: feeders.feeder_ntu.Feeder
@@ -26,9 +26,9 @@ test_feeder_args:
   debug: False
 
 # model
-model: model.hdgcn.Model
+model: model.msgcn.Model
 model_args:
-  num_class: 120
+  num_class: 60
   num_point: 50
   num_person: 1
   graph: graph.ntu_rgb_d.Graph
@@ -46,5 +46,5 @@ warm_up_epoch: 5
 device: [0]
 batch_size: 16
 test_batch_size: 16
-num_epoch: 65
+num_epoch: 60
 nesterov: True

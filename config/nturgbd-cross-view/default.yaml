@@ -1,9 +1,9 @@
-work_dir: ./work_dir/ntu60/xview/ctrgcn_joint
+work_dir: ./work_dir/ntu60/xview/msgcn_joint
 
 # feeder
 feeder: feeders.feeder_ntu.Feeder
 train_feeder_args:
-  data_path: D:/whq/dataset/NTU dataset/NTU60_CV.npz
+  data_path: data/ntu/NTU60_CV.npz
   split: train
   debug: False
   random_choose: False
@@ -17,7 +17,7 @@ train_feeder_args:
   bone: False
 
 test_feeder_args:
-  data_path: D:/whq/dataset/NTU dataset/NTU60_CV.npz
+  data_path: data/ntu/NTU60_CV.npz
   split: test
   window_size: 64
   p_interval: [0.95]
@@ -26,9 +26,9 @@ test_feeder_args:
   debug: False
 
 # model
-model: model.hdgcn.Model
+model: model.msgcn.Model
 model_args:
-  num_class: 120
+  num_class: 60
   num_point: 25
   num_person: 2
   graph: graph.ntu_rgb_d.Graph
@@ -44,7 +44,7 @@ warm_up_epoch: 5
 
 # training
 device: [0]
-batch_size: 8
-test_batch_size: 8
+batch_size: 64
+test_batch_size: 64
 num_epoch: 65
 nesterov: True
