@@ -1,4 +1,4 @@
-# GH-GCN
+# MS-GCN
 Our proposed MS-GCN is effective in both skeleton-based interaction recognition and individual recognition
 # Prerequisites
 
